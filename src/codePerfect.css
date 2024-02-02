@@ -30,7 +30,7 @@ pre ul.hljs-line-num li {
     padding: 0;
 }
 
-.code-perfect-clipboard-container {
+.code-perfect-container {
     position: relative;
 }
 
@@ -52,7 +52,7 @@ pre ul.hljs-line-num li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.code-perfect-clipboard-container:hover .code-perfect-clipboard-button {
+.code-perfect-container:hover .code-perfect-clipboard-button {
     display: block;
 }
 

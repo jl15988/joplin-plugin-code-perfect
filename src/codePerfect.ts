@@ -10,6 +10,7 @@ module.exports = {
                     return self.renderToken(tokens, idx, options, env, self);
                 };
                 markdownIt.renderer.rules.fence = function (tokens, idx, options, env, self) {
+                    // 自定义highlight
                     options.highlight = (str, lang) => {
                         if (lang && hljs.getLanguage(lang)) {
                             try {
@@ -23,6 +24,7 @@ module.exports = {
                         return str; // 使用额外的默认转义
                     }
 
+                    // 复制按钮
                     const token = tokens[idx];
                     const oneLineContent = encodeURIComponent(token.content)
                         .replace(/'/g, "\\'");
@@ -39,14 +41,36 @@ module.exports = {
                         </div>
                     `
 
-                    return `<div class="code-perfect-clipboard-container">${defaultRender(tokens, idx, options, env, self)} ${button}</div>`;
+                    // 行号
+                    const codePerfectContainerElement = document.createElement("div");
+                    codePerfectContainerElement.classList.add("code-perfect-container");
+                    codePerfectContainerElement.innerHTML = `${defaultRender(tokens, idx, options, env, self)} ${button}`;
+                    const preElems = codePerfectContainerElement.querySelectorAll("pre.hljs");
+                    Array.from(preElems).forEach((item, index) => {
+                        let num = item.innerHTML.split('\n').length - 1
+                        let ul = document.createElement("ul")
+                        ul.setAttribute('class', 'hljs-line-num')
+                        for (let i = 0; i < num; i++) {
+                            let n = i + 1
+                            let childLi = document.createElement("li")
+                            let li_text = document.createTextNode(String(n));
+                            childLi.appendChild(li_text)
+                            ul.appendChild(childLi)
+                        }
+                        item.appendChild(ul)
+                    });
+
+                    // 折叠
+                    // const foldElem = document.createElement("div");
+                    // foldElem.classList.add("code-perfect-fold-button");
+
+                    return codePerfectContainerElement.outerHTML;
                 }
             },
             assets: function () {
                 return [
                     {name: 'highlight/styles/atom-one-dark.css'},
-                    {name: 'codePerfect.css'},
-                    {name: 'codePerfectRule.js'}
+                    {name: 'codePerfect.css'}
                 ];
             },
         }
