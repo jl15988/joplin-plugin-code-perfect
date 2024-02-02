@@ -10,5 +10,9 @@ joplin.plugins.register({
             pluginId,
             './codePerfect.js'
         );
+
+        await joplin.contentScripts.onMessage(pluginId, (message: any) => {
+            joplin.clipboard.writeText(decodeURIComponent(message));
+        });
     },
 });
