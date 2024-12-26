@@ -1,5 +1,8 @@
-pre.hljs code {
+pre.hljs code, ul.hljs {
     font-family: Consolas, Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif;
+}
+
+pre.hljs code {
     padding: 1em !important;
 }
 
@@ -10,7 +13,7 @@ pre.hljs {
     font-size: 16px;
 }
 
-pre ul.hljs-line-num {
+ul.hljs-line-num {
     position: absolute;
     left: 0;
     top: 0;
@@ -26,7 +29,7 @@ pre ul.hljs-line-num {
     box-sizing: border-box;
 }
 
-pre ul.hljs-line-num li {
+ul.hljs-line-num li {
     margin: 0;
     padding: 0;
 }

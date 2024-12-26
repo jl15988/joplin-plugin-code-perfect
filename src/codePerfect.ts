@@ -48,7 +48,7 @@ module.exports = {
                     Array.from(preElems).forEach((item, index) => {
                         let num = item.innerHTML.split('\n').length - 1
                         let ul = document.createElement("ul")
-                        ul.setAttribute('class', 'hljs-line-num')
+                        ul.setAttribute('class', 'hljs hljs-line-num')
                         for (let i = 0; i < num; i++) {
                             let n = i + 1
                             let childLi = document.createElement("li")
