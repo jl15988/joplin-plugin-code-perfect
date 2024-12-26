@@ -34,5 +34,10 @@ joplin.plugins.register({
         await joplin.contentScripts.onMessage(pluginId, (message: any) => {
             joplin.clipboard.writeText(decodeURIComponent(message));
         });
+
+        const installDir = await joplin.plugins.installationDir();
+
+        await joplin.window.loadNoteCssFile(`${installDir}/highlight/styles/atom-one-dark.css`);
+        await joplin.window.loadNoteCssFile(`${installDir}/codePerfect.css`);
     },
 });
