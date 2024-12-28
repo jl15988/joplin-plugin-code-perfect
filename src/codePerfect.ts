@@ -3,7 +3,7 @@ import hljs = require("./highlight/highlight");
 module.exports = {
     default: function (context) {
         return {
-            plugin: function (markdownIt, options) {
+            plugin: async function (markdownIt, options) {
                 const pluginId = context.pluginId;
 
                 const defaultRender = markdownIt.renderer.rules.fence || function (tokens, idx, options, env, self) {
@@ -12,16 +12,20 @@ module.exports = {
                 markdownIt.renderer.rules.fence = function (tokens, idx, options, env, self) {
                     // 自定义highlight
                     options.highlight = (str, lang) => {
-                        if (lang && hljs.getLanguage(lang)) {
-                            try {
-                                return '<pre class="hljs"><code class="hljs">' +
-                                    hljs.highlight(lang, str, true).value +
-                                    '</code></pre>';
-                            } catch (__) {
-                            }
+                        let codeVal = ''
+                        try {
+                            codeVal = hljs.highlight(str, {
+                                language: lang,
+                                ignoreIllegals: true
+                            }).value
+                        } catch (__) {
+                            codeVal = str;
                         }
-
-                        return str; // 使用额外的默认转义
+                        return [
+                            '<pre class="hljs"><code class="hljs">',
+                            codeVal,
+                            '</code></pre>'
+                        ].join('')
                     }
 
                     // 复制按钮

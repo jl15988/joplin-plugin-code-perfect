@@ -1,0 +1,11 @@
+.code-perfect-container:hover .code-perfect-clipboard-button {
+    display: none;
+}
+
+.code-perfect-clipboard-button.copied .code-perfect-clipboard-copied {
+    display: none;
+}
+
+.code-perfect-clipboard-button .code-perfect-clipboard-copy {
+    display: none;
+}

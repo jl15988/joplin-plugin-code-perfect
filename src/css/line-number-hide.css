@@ -1,0 +1,7 @@
+pre.hljs {
+    padding-left: 0 !important;
+}
+
+ul.hljs-line-num {
+    display: none !important;
+}

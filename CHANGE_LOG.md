@@ -1,16 +1,18 @@
-## 1.0.3 - alpha
+## 1.0.3
 
-1. added full highlightjs lib with all languages it supports.
-2. add support for the rich text editor.
-3. fix: line number list renders below the code block.
+1. 添加插件设置，来选择代码块主题、是否显示行号、是否显示一键复制。
+2. 可选择代码块主题。
+3. 添加了完整的 highlightjs 库，支持所有语言。
+4. 添加对富文本编辑器的支持。
+5. 修复：代码块下方呈现行号列表的问题。
 
 
 ## 1.0.2
 
-1. Resolve the issue of occasionally not displaying line numbers.
+1. 解决偶尔不显示行号的问题。
 
 
 ## 1.0.1
 
-1. Implement beautiful code blocks.
-2. Implement one click copying.
+1.实现优化代码块样式。
+2.实现一键复制。
