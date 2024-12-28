@@ -1,11 +1,11 @@
 {
   "name": "joplin-plugin-code-perfect",
+  "private": false,
   "version": "1.0.3",
   "scripts": {
     "dist": "webpack --joplin-plugin-config buildMain && webpack --joplin-plugin-config buildExtraScripts && webpack --joplin-plugin-config createArchive",
     "prepare": "npm run dist",
-    "update": "npm install -g generator-joplin && yo joplin --update",
-    "toPublish": "npm publish --registry=https://registry.npmjs.org --access=public"
+    "update": "npm install -g generator-joplin && yo joplin --update"
   },
   "license": "MIT",
   "keywords": [
