@@ -1,7 +1,7 @@
 {
   "name": "joplin-plugin-code-perfect",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "dist": "webpack --joplin-plugin-config buildMain && webpack --joplin-plugin-config buildExtraScripts && webpack --joplin-plugin-config createArchive",
     "prepare": "npm run dist",
