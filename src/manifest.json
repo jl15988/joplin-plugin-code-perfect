@@ -2,7 +2,7 @@
 	"manifest_version": 1,
 	"id": "jl15988.JoplinCodePerfectPlugin",
 	"app_min_version": "2.8",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"name": "CodePerfect",
 	"description": "Make your code blocks look perfect! Support for displaying code block line numbers, support for one-click copying.",
 	"author": "jl15988",
